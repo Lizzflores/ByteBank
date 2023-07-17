@@ -1,8 +1,8 @@
 class Cuenta{
-    double saldo;
-    int agencia;
-    int numero;
-    Cliente titular;
+    private double saldo;
+    private int agencia;
+    private int numero;
+    Cliente titular = new Cliente();
     //No retorna valor
     public void depositar(
         double valor
@@ -30,5 +30,21 @@ class Cuenta{
             return true;
         }
         return false;
+    }
+
+    public double getSaldo(){
+        return this.saldo;
+    }
+
+    public void setAgencia(int agencia){
+        if(agencia>0){
+            this.agencia = agencia;
+        } else {
+            System.out.println("No estan permitidos valores negativos");
+        }
+    }
+
+    public int getAgencia(){
+        return agencia;
     }
 }
